@@ -7,7 +7,7 @@ Create completely random names based on human linguistic patterns. Suitable for 
 
 To generate names of specified lengths, try here:
 
-[Interactive Code for NameCreator](https://tapiaer22.github.io/NameCreator/)
+<a href="https://tapiaer22.github.io/NameCreator/" target="_blank">Interactive Code for NameCreator</a>
 
 ## Features
 - Generate random names with no parameters (Default length = 5).
