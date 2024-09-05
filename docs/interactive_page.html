@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            font-size: 14px;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Random Name Generator</h1>
+
+<p>Enter the length of the name:</p>
+
+<input type="number" id="nameLength" min="1" max="20" placeholder="Length" />
+<button onclick="generateName()">Generate Name</button>
+
+<div id="output"></div>
+
+<script>
+    // JavaScript function to generate a random name
+    function generateName() {
+        // Get the desired length from the input field
+        var length = document.getElementById('nameLength').value;
+        var vowels = "aeiou";
+        var consonants = "bcdfghjklmnpqrstvwxyz";
+        
+        // If no length is provided, default to 5
+        length = length ? parseInt(length) : 5;
+        
+        var name = '';
+        // Randomly choose consonants and vowels to form a name
+        for (var i = 0; i < length; i++) {
+            if (i % 2 == 0) {
+                name += consonants.charAt(Math.floor(Math.random() * consonants.length));
+            } else {
+                name += vowels.charAt(Math.floor(Math.random() * vowels.length));
+            }
+        }
+        
+        // Output the generated name
+        document.getElementById('output').innerHTML = "Generated Name: " + name;
+    }
+</script>
+
+</body>
+</html>
 
