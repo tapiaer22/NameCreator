@@ -14,6 +14,30 @@ To generate names of specified lengths, try here:
 - Customize name length based on user input.
 - Names follow natural linguistic patterns to sound more human-like.
 
-## Installation
+## Usage
 
-```bash
+After installation, you can generate random names:
+
+### Example 1: Generate a random name of default length
+```java
+NameCreator nameCreator = new NameCreator();
+String randomName = nameCreator.randomName();
+System.out.println(randomName);  // Output: Random generated name of 5 letters
+```
+
+### Example 2: Generate a random name of specified length
+```java
+NameCreator nameCreator = new NameCreator();
+String randomName = nameCreator.randomName(9);
+System.out.println(randomName); //Output: Random generated name of 9 letters
+```
+
+### Example 3: Generate a List of 3 random names of length 5
+```java
+NameCreator nameCreator = new NameCreator();
+List<String> randomNames = nameCreator.randomNameList(3,5);
+System.out.println(randomNames); //Output: List of 3 names of 5 letters each
+```
+
+
+
