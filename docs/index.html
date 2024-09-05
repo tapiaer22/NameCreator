@@ -42,18 +42,54 @@
         var length = document.getElementById('nameLength').value;
         var vowels = "aeiou";
         var consonants = "bcdfghjklmnpqrstvwxyz";
+        var name = "";
+        let vow = 0, cons = 0, letters = 0;
         
         // If no length is provided, default to 5
         length = length ? parseInt(length) : 5;
-        
-        var name = '';
-        // Randomly choose consonants and vowels to form a name
-        for (var i = 0; i < length; i++) {
-            if (i % 2 == 0) {
-                name += consonants.charAt(Math.floor(Math.random() * consonants.length));
-            } else {
-                name += vowels.charAt(Math.floor(Math.random() * vowels.length));
+
+        while(letters<length){
+            let valueR = Math.floor(Math.random() * 2);
+            //First letter
+            if (letters == 0){
+                if(valueR == 0){
+                    name+= vowels.charAt(Math.floor(Math.random() * vowels.length));
+                    vow+=2;
+                    letters++;
+                }
+                else{
+                    name+= consonants.charAt(Math.floor(Math.random() * consonants.length));
+                    cons+=2;
+                    letters++;
+                }
             }
+            //If 2 vowels already
+            if(vow>=2){
+                name+= consonants.charAt(Math.floor(Math.random() * consonants.length));
+                vow=1;
+                cons++;
+                letters++;
+            }
+            //If 2 consonants already
+            else if(cons>=2){
+                name+= vowels.charAt(Math.floor(Math.random() * vowels.length));
+                cons=1;
+                vow++;
+                letters++;
+            }
+
+            //If valueR = 0, add vowel
+            else if (valueR == 0){
+				name += vowels.charAt(Math.floor(Math.random() * vowels.length));
+				vow++;
+				letters++;
+			}
+            //If valueR = 1, add consonant
+            else{
+				name += consonants.charAt(Math.floor(Math.random * consonants.length));
+				cons++;
+				letters++;
+			}
         }
         
         // Output the generated name
