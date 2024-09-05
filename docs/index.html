@@ -49,30 +49,30 @@
         length = length ? parseInt(length) : 5;
 
         while(letters<length){
-            let valueR = Math.floor(Math.random() * 2);
+            let valueR = Math.round(Math.random() * 2);
             //First letter
             if (letters == 0){
                 if(valueR == 0){
-                    name+= vowels.charAt(Math.floor(Math.random() * vowels.length));
+                    name+= vowels.charAt(Math.round(Math.random() * vowels.length));
                     vow+=2;
                     letters++;
                 }
                 else{
-                    name+= consonants.charAt(Math.floor(Math.random() * consonants.length));
+                    name+= consonants.charAt(Math.round(Math.random() * consonants.length));
                     cons+=2;
                     letters++;
                 }
             }
             //If 2 vowels already
             if(vow>=2){
-                name+= consonants.charAt(Math.floor(Math.random() * consonants.length));
+                name+= consonants.charAt(Math.round(Math.random() * consonants.length));
                 vow=1;
                 cons++;
                 letters++;
             }
             //If 2 consonants already
             else if(cons>=2){
-                name+= vowels.charAt(Math.floor(Math.random() * vowels.length));
+                name+= vowels.charAt(Math.round(Math.random() * vowels.length));
                 cons=1;
                 vow++;
                 letters++;
@@ -80,13 +80,13 @@
 
             //If valueR = 0, add vowel
             else if (valueR == 0){
-				name += vowels.charAt(Math.floor(Math.random() * vowels.length));
+				name += vowels.charAt(Math.round(Math.random() * vowels.length));
 				vow++;
 				letters++;
 			}
             //If valueR = 1, add consonant
             else{
-				name += consonants.charAt(Math.floor(Math.random * consonants.length));
+				name += consonants.charAt(Math.round(Math.random * consonants.length));
 				cons++;
 				letters++;
 			}
